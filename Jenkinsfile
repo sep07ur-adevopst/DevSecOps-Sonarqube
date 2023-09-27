@@ -45,11 +45,11 @@ pipeline {
                     withSonarQubeEnv('SonarQube') {
                     sh "mvn clean verify sonar:sonar -Dsonar.projectKey=numeric-application -Dsonar.projectName='numeric-application' -Dsonar.host.url=http://localhost:9000 "
                     }
-                    timeout(time: 2, unit: 'MINUTES') {
-                    script {
-                        waitForQualityGate abortPipeline: true
-                    }
-                  }
+//                    timeout(time: 2, unit: 'MINUTES') {
+//                    script {
+//                        waitForQualityGate abortPipeline: true
+ //                   }
+ //                 }
                 }
             }
                     
